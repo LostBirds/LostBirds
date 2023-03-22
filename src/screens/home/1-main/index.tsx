@@ -1,6 +1,6 @@
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {TouchableOpacity, StyleSheet, Text, View, Alert} from 'react-native';
+import {TouchableOpacity, StyleSheet, Text, View} from 'react-native';
 import {colors} from '@/style/theme';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
@@ -71,7 +71,7 @@ const viewStyle = {
   backgroundColor: colors.background1,
 };
 
-export default function Home() {
+export default function Home({navigation}) {
   return (
     <SafeAreaView style={viewStyle}>
       <View style={style.contents}>
@@ -93,7 +93,7 @@ export default function Home() {
       <View style={style.buttonView}>
         <SubmitButton
           title="Submit your photo!"
-          onPress={() => Alert.alert('Submit button pressed')}
+          onPress={() => navigation.navigate('Upload')}
         />
       </View>
     </SafeAreaView>

@@ -34,7 +34,7 @@ const viewStyle = {
 };
 
 export default function SubmitPage() {
-  const [imageSource, setImageSource] = useState<string | undefined>(undefined);
+  const [imageSource, setImageSource] = useState<any>(undefined);
 
   const showImagePicker = (): void => {
     launchImageLibrary({mediaType: 'photo'}, response => {
@@ -47,7 +47,7 @@ export default function SubmitPage() {
       } else {
         // You can also display the image using data:
         // const source = { uri: 'data:image/jpeg;base64,' + response.data };
-        setImageSource(response.assets.uri);
+        setImageSource(response.assets);
       }
     });
   };
@@ -57,7 +57,7 @@ export default function SubmitPage() {
       if (response.errorCode) {
         console.log('LaunchCamera Error: ', response.errorCode);
       } else {
-        setImageSource(response.assets.uri);
+        setImageSource(response.assets);
       }
     });
   };

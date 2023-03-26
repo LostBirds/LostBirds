@@ -93,7 +93,7 @@ export default function Home({navigation}) {
       <View style={style.buttonView}>
         <SubmitButton
           title="Submit your photo!"
-          onPress={() => navigation.navigate('Upload')}
+          onPress={() => navigation.navigate('home/upload')}
         />
       </View>
     </SafeAreaView>

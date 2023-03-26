@@ -1,6 +1,13 @@
 import React, {useState} from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {ScrollView, StyleSheet, Text, View, Image} from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
 import styled from 'styled-components/native';
 import axios from 'axios';
 import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
@@ -26,22 +33,42 @@ const ButtonBox = styled.View`
   margin: 10%;
 `;
 
-const SubmitButton = styled.TouchableOpacity`
-  width: 300px;
-  height: 50px;
-  border-width: 1px;
-  border-radius: 8px;
-  border-color: #cccccc;
-  padding: 8px 32px;
-  margin-top: 40px;
-`;
-
 const style = StyleSheet.create({
   image: {
     width: '100%',
     aspectRatio: 3.43,
     marginTop: 20,
     borderRadius: 12,
+  },
+  button: {
+    backgroundColor: colors.background2,
+    width: 300,
+    height: 50,
+    borderRadius: 8,
+    padding: 8,
+    marginTop: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonText: {
+    fontFamily: 'SFProText-Regular',
+    color: 'black',
+    fontSize: 18,
+  },
+  submitButton: {
+    backgroundColor: colors.selected2,
+    width: 300,
+    height: 50,
+    borderRadius: 8,
+    padding: 8,
+    marginTop: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  submitButtonText: {
+    fontFamily: 'SFProText-Regular',
+    color: colors.background2,
+    fontSize: 22,
   },
 });
 
@@ -50,7 +77,7 @@ const viewStyle = {
   backgroundColor: colors.background1,
 };
 
-export default function SubmitPage() {
+export default function Upload() {
   const [imageSource, setImageSource] = useState<any>(undefined);
 
   const showImagePicker = (): void => {
@@ -91,31 +118,28 @@ export default function SubmitPage() {
     console.log('Submitted.');
   };
 
+  const SubmitButton = () => (
+    <TouchableOpacity onPress={Submit} style={style.submitButton}>
+      <Text style={style.submitButtonText}>Submit</Text>
+    </TouchableOpacity>
+  );
   return (
     <SafeAreaView style={viewStyle}>
       <ScrollView>
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
           <ButtonBox>
-            <ImagePickerButton
-              style={{justifyContent: 'center', alignItems: 'center'}}
-              onPress={showImagePicker}>
-              <Label>Load Photo</Label>
-            </ImagePickerButton>
-            <ImagePickerButton
-              onPress={showCamera}
-              style={{justifyContent: 'center', alignItems: 'center'}}>
-              <Label>Take Photo</Label>
-            </ImagePickerButton>
+            <TouchableOpacity style={style.button} onPress={showImagePicker}>
+              <Text style={style.buttonText}>Load Photo</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={showCamera} style={style.button}>
+              <Text style={style.buttonText}>Take Photo</Text>
+            </TouchableOpacity>
           </ButtonBox>
-          <Image
+          <Photo
             source={{uri: imageSource}}
             style={{width: 300, height: 300}}
           />
-          <SubmitButton
-            style={{justifyContnet: 'center', alignItems: 'center'}}
-            onPress={Submit}>
-            <Label>Submit</Label>
-          </SubmitButton>
+          <SubmitButton />
         </View>
       </ScrollView>
     </SafeAreaView>

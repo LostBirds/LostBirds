@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import BottomTabNavigator from './bottom-tab';
-import UploadingPage from './navigations/UploadingPage';
+
 // import ResultDetails from './navigations/ResultDetails'
 export type RootStackParamList = {
   Main: undefined;
@@ -22,7 +22,7 @@ export default function Navigation() {
           headerShown: false,
         }}>
         <Stack.Screen name="Main" component={BottomTabNavigator} />
-        <Stack.Screen name="Upload" component={UploadingPage} />
+        {/* <Stack.Screen name="Upload" component={UploadingPage} /> */}
         {/*   <Stack.Screen name="Result" component={ResultDetails} /> */}
       </Stack.Navigator>
     </NavigationContainer>

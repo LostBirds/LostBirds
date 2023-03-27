@@ -28,13 +28,13 @@ const TabButton = props => {
   useEffect(() => {
     if (focused) {
       viewRef.current.animate({
-        0: {scale: 1.2},
-        1: {scale: 1.6},
+        0: {scale: 1},
+        1: {scale: 1.3},
       });
     } else {
       viewRef.current.animate({
-        0: {scale: 1.6},
-        1: {scale: 1.2},
+        0: {scale: 1.3},
+        1: {scale: 1},
       });
     }
   }, [focused]);

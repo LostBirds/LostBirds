@@ -67,7 +67,7 @@ const viewStyle = {
   backgroundColor: colors.background1,
 };
 
-export default function Upload() {
+export default function Upload({navigation}) {
   const [imageSource, setImageSource] = useState<any>(undefined);
 
   const showImagePicker = (): void => {
@@ -98,21 +98,23 @@ export default function Upload() {
   };
 
   const Submit = async (): Promise<void> => {
-    var body = new FormData();
+    // var body = new FormData();
 
-    body.append('image', {uri: imageSource, type: 'multipart/form-data'});
+    // body.append('image', {uri: imageSource, type: 'multipart/form-data'});
 
-    axios.post('serverUrl', body, {
-      headers: {'content-type': 'multipart/form-data'},
-    });
+    // axios.post('serverUrl', body, {
+    //   headers: {'content-type': 'multipart/form-data'},
+    // });
+
     console.log('Submitted.');
   };
 
-  const SubmitButton = () => (
-    <TouchableOpacity onPress={Submit} style={style.submitButton}>
+  const SubmitButton = ({navigation}) => (
+    <TouchableOpacity onPress={() => navigation.navigate('home/result')} style={style.submitButton}>
       <Text style={style.submitButtonText}>Submit</Text>
     </TouchableOpacity>
   );
+  
   return (
     <SafeAreaView style={viewStyle}>
       <ScrollView>
@@ -129,7 +131,7 @@ export default function Upload() {
             source={{uri: imageSource}}
             style={{width: 300, height: 300}}
           />
-          <SubmitButton />
+          <SubmitButton navigation={navigation}/>
         </View>
       </ScrollView>
     </SafeAreaView>

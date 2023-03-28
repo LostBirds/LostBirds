@@ -100,7 +100,7 @@ export default function Upload() {
   const showCamera = (): void => {
     launchCamera({mediaType: 'photo'}, response => {
       if (response.errorCode) {
-        console.log('LaunchCamera Error: ', response.errorCode);
+        console.log('LaunchCamera Error: ', response.errorMessage);
       } else {
         setImageSource(response.assets[0].uri);
       }

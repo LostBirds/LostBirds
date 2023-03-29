@@ -109,14 +109,14 @@ export default function Result() {
             <View style={style.bottom}>
                 <View style={style.mine}>
                     <View style={style.submitTitleBox}>
-                        <Text style={{color: 'black', fontWeight: 'bold', fontSize: 30, marginBottom: '1%'}}>Your Birds</Text>
+                        <Text style={{color: 'black', fontWeight: 'normal', fontSize: 30, marginBottom: '1%'}}>Your Birds</Text>
                     </View>
                     <View style={style.submitImgBox}>
                         <Image style={style.submitImg} source={require('../../../assets/images/submitted_image.png')}></Image>
                     </View>
                 </View>
                 <View style={style.description}>
-                    <Text style={{color: 'black',fontWeight: 'bold', fontSize: 30}}>Outline</Text>
+                    <Text style={{color: 'black',fontWeight: 'normal', fontSize: 30}}>Outline</Text>
                     <ScrollView>
                         <Text style={{fontFamily: 'SFProText-Regular', fontSize: 17, color: 'black'}}>It is a rare winter bird as a bird of the order Anatidae [Endangered Wildlife Class II]. Body length 120 cm. Male and female morphology is similar. The adult bird has a white body and the young bird has a grayish brown body. At first glance, it looks similar to the big swans, but it is smaller than the big swans, and the yellow part of the beak is narrow and round. Observed in lakes, river estuaries, seashores, grasslands, farmlands, reclaimed lands, etc. As a winter bird, it puts its head into the water and eats leaves, stems or roots of water plants, and sometimes seeks food in farmlands or grasslands. In the past, not a small number came across the country, but now it has greatly decreased and a very small number overwinter. It winters in Gangwon-do's east coast lagoon, Nakdong River estuary, Taehwa River, Junam Reservoir, Geum River estuary, Cheonsu Bay, Sapgyo Lake and Han River. Worldwide, it breeds in northern Eurasia, Alaska, and northern Canada, and winters in western Europe, around the Caspian Sea, Korea, eastern China, and Japan.</Text>
                     </ScrollView>

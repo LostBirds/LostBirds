@@ -18,16 +18,6 @@ const Photo = styled.Image`
   height: 200px;
   border-radius: 8px;
 `;
-const ImagePickerButton = styled.TouchableOpacity`
-  width: 300px;
-  height: 50px;
-  border-width: 1px;
-  border-radius: 8px;
-  border-color: #cccccc;
-  padding: 8px 32px;
-  margin-top: 16px;
-`;
-const Label = styled.Text``;
 
 const ButtonBox = styled.View`
   margin: 10%;

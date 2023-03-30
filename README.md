@@ -32,6 +32,7 @@
 ### Concept
 
 ### Prototype
+![image](https://user-images.githubusercontent.com/71624077/228910478-3f0ccd7f-7602-4563-93e0-9ba12ae5e1a5.png)
 
 ### Demo Video
 
